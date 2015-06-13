@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app=''>
+<html ng-app='ToDoList'>
 <title>ToDo List</title>
 <head>
 
@@ -12,5 +12,13 @@
 </head>
 <body ng-controller='ToDoListController as todo'>
   Hello world
+  <div id='list' ng-repeat='tasks in todo.list'>
+    {{ tasks.task }}
+  </div>
+  <div>
+    Add a task here:
+    <input type='text' ng-model='todo.newTask'>
+    <button id='addtask' type='submit' ng-click='todo.addTask();'>Add</button>
+  </div>
 </body>
 </html>

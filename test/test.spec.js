@@ -5,10 +5,22 @@ describe('ToDo List', function () {
 
   beforeEach(inject(function($controller) {
     ctrl = $controller('ToDoListController')
+    var testTasks = [
+      {
+        'task': 'Get Milk'
+      }
+    ];
+
   }));
 
-  it('starts with an empty todo list', function() {
-    expect(ctrl.list).toBeUndefined();
+  it('starts with no tasks', function() {
+    expect(ctrl.list.length).toEqual(0);
+  });
+
+  it('can add a task', function () {
+    ctrl.newTask = 'Get Milk';
+    ctrl.addTask();
+    expect(ctrl.list.length).toEqual(1);
   });
 
 });

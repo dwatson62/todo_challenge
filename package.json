@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/dwatson62/todo_challenge#readme",
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.2",
     "jasmine-core": "^2.3.4",
     "karma": "^0.12.36",
     "karma-chrome-launcher": "^0.1.12",
