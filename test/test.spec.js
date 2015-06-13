@@ -2,15 +2,17 @@ describe('ToDo List', function () {
   beforeEach(module('ToDoList'));
 
   var ctrl;
+  var testTasks;
+  var completedTasks;
 
   beforeEach(inject(function($controller) {
     ctrl = $controller('ToDoListController')
-    var testTasks = [
-      {
-        'task': 'Get Milk'
-      }
-    ];
-
+    testTasks = [{
+        'task': 'Get Milk', 'status': 'pending'
+      }]
+    completedTasks = [{
+        'task': 'Get Milk', 'status': 'completed'
+      }]
   }));
 
   it('starts with no tasks', function() {
@@ -20,7 +22,16 @@ describe('ToDo List', function () {
   it('can add a task', function () {
     ctrl.newTask = 'Get Milk';
     ctrl.addTask();
-    expect(ctrl.list.length).toEqual(1);
+    console.log(ctrl.list)
+    expect(ctrl.list).toEqual(testTasks);
+  });
+
+  it('can mark a test as completed', function () {
+    // not passing
+    ctrl.newTask = 'Get Milk';
+    ctrl.addTask();
+    ctrl.completeTask();
+    expect(ctrl.list).toEqual(completedTasks);
   });
 
 });

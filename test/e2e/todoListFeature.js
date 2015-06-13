@@ -7,9 +7,25 @@ describe('ToDo List', function () {
     expect(browser.getTitle()).toEqual('ToDo List')
   });
 
-  it('can type in a new task and see it appear', function () {
+  it('can type in a new task and see it appear as pending', function () {
     element(by.model('todo.newTask')).sendKeys('Get Milk');
     element(by.id('addtask')).click();
-    expect(element(by.id('list')).getText()).toEqual('Get Milk');
+    expect(element(by.id('list')).getText()).toContain('Get Milk : pending');
+  });
+
+  it('can mark a task as completed', function () {
+    element(by.model('todo.newTask')).sendKeys('Get Milk');
+    element(by.id('addtask')).click();
+    element(by.className('checkbox')).click();
+    element(by.id('completetask')).click();
+    expect(element(by.id('list')).getText()).toContain('Get Milk : completed');
+  });
+
+  it('can delete a task', function () {
+    element(by.model('todo.newTask')).sendKeys('Get Milk');
+    element(by.id('addtask')).click();
+    element(by.className('checkbox')).click();
+    element(by.id('deletetask')).click();
+
   });
 });
