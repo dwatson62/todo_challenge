@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "test": "protractor test/e2e/conf.js"
+    "start": "protractor test/e2e/conf.js"
   },
   "repository": {
     "type": "git",
