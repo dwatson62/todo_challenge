@@ -60,13 +60,13 @@ describe('ToDo List', function () {
     });
 
     it('one task at a time', function () {
-      ctrl.markComplete = test1;
+      ctrl.markComplete = { 'Get Milk': true };
       ctrl.completeTask();
       expect(ctrl.list).toEqual(completedTest1);
     });
 
     it('multiple tasks at once', function () {
-      ctrl.markComplete = test2;
+      ctrl.markComplete = { 'Get Milk': true, 'Walk Dog': true };
       ctrl.completeTask();
       expect(ctrl.list).toEqual(completedTest2);
     });
