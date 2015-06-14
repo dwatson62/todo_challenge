@@ -5,27 +5,11 @@ ToDo Challange
 
 My submission for the ToDo Challenge
 
-![NAME_OF_IMAGE](http://ENTER_URL)
-
 ## Technologies Used
 
 - Javascript
-- LANGUAGE_TWO
 - Angular
 - Karma, Protractor
-
-## Job List
-
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-
-## Favourite Code Snippet
-
-~~~
- TODO: paste code here
-~~~
 
 ## Collaborators
 
@@ -33,9 +17,5 @@ My submission for the ToDo Challenge
 
 ## Still to complete/refactor
 
-- [ ]
-- [ ]
-
-## Takeaway
-
-TODO: Enter a personal reflection and/or things you learnt
+- [ ] Add filters for the todo list
+- [ ] Setup travis.yml correctly. So far it runs the karma tests but not protractor

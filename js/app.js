@@ -34,10 +34,10 @@ todoList.controller('ToDoListController', [ function() {
 
   self.completeTask = function() {
     task = Object.keys(self.markComplete);
-    task.forEach( function (task) {
+    self.markComplete.forEach( function (task) {
       for (x = 0; x < self.list.length; x ++ ) {
         item = self.list[x];
-        if (item.task == task) {
+        if (item.task == task.task) {
           item.status = 'Completed';
         }
       }
@@ -47,7 +47,7 @@ todoList.controller('ToDoListController', [ function() {
 
   self.deleteTask = function() {
     task = Object.keys(self.markComplete);
-    task.forEach( function (task) {
+    self.markComplete.forEach( function (task) {
       for (x = 0; x < self.list.length; x ++ ) {
         item = self.list[x];
         if (item.task == task) {
