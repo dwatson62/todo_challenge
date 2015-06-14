@@ -25,7 +25,17 @@ todoList.controller('ToDoListController', [ function() {
     }
   };
 
+  self.checkTask = function() {
+    for (x = 0; x < self.list.length; x ++ ) {
+      item = self.list[x];
+      if (item.task == self.newTask) {
+        throw Error('Task already added');
+      }
+    }
+  };
+
   self.addTask = function() {
+    self.checkTask();
     self.list.push( { 'task': self.newTask, 'status': 'pending' } );
     self.defaultMessage();
     self.updateTotal();

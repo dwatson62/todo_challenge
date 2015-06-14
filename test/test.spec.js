@@ -39,7 +39,7 @@ describe('ToDo List', function () {
       expect(ctrl.tasks).toBe(true);
     });
 
-    it('and the total number of pending tasks are updated', function () {
+    it('and total number of pending tasks are updated', function () {
       expect(ctrl.taskNumber).toEqual(1);
     });
 
@@ -47,6 +47,11 @@ describe('ToDo List', function () {
       // not passing
       ctrl.completeTask();
       expect(ctrl.list).toEqual(completedTasks);
+    });
+
+    it('cannot add the same task twice', function () {
+      ctrl.newTask = 'Get Milk';
+      expect( function(){ ctrl.addTask(); } ).toThrow(new Error("Task already added"));
     });
 
   });
