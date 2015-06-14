@@ -6,13 +6,13 @@ describe('ToDo List', function () {
   var completedTasks;
 
   beforeEach(inject(function($controller) {
-    ctrl = $controller('ToDoListController')
+    ctrl = $controller('ToDoListController');
     testTasks = [{
         'task': 'Get Milk', 'status': 'Active'
-      }]
+      }];
     completedTasks = [{
         'task': 'Get Milk', 'status': 'Completed'
-      }]
+      }];
   }));
 
   describe('starts with no tasks', function () {

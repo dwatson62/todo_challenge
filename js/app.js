@@ -41,7 +41,7 @@ todoList.controller('ToDoListController', [ function() {
           item.status = 'Completed';
         }
       }
-    })
+    });
     self.updateTotal();
   };
 
@@ -54,7 +54,7 @@ todoList.controller('ToDoListController', [ function() {
           self.list.splice(x, 1);
         }
       }
-    })
+    });
     self.updateTotal();
   };
 
@@ -67,6 +67,6 @@ todoList.controller('ToDoListController', [ function() {
       }
     }
     self.updateTotal();
-  }
+  };
 
 }]);

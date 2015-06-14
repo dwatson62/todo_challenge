@@ -1,19 +1,19 @@
 describe('ToDo List', function () {
 
-  var addTaskBtn = element(by.id('addtask'))
-  var checkBox = element(by.className('checkbox'))
-  var completedTasks = element(by.id('completetask'))
+  var addTaskBtn = element(by.id('addtask'));
+  var checkBox = element(by.className('checkbox'));
+  var completedTasks = element(by.id('completetask'));
 
   beforeEach(function () {
     browser.get('http://localhost:8080');
   });
 
   it('has a title', function () {
-    expect(browser.getTitle()).toEqual('ToDo List')
+    expect(browser.getTitle()).toEqual('ToDo List');
   });
 
   it("displays '0 Tasks Active' when empty", function () {
-    expect(element(by.id('total')).getText()).toEqual('0 Tasks Active')
+    expect(element(by.id('total')).getText()).toEqual('0 Tasks Active');
   });
 
   describe('When a task is added', function () {
@@ -28,7 +28,7 @@ describe('ToDo List', function () {
     });
 
     it('the total number of tasks is displayed', function () {
-      expect(element(by.id('total')).getText()).toEqual('1 Tasks Active')
+      expect(element(by.id('total')).getText()).toEqual('1 Tasks Active');
     });
 
   });
@@ -49,7 +49,7 @@ describe('ToDo List', function () {
     it('and the total active tasks are updated', function () {
       checkBox.click();
       completedTasks.click();
-      expect(element(by.id('total')).getText()).toEqual('0 Tasks Active')
+      expect(element(by.id('total')).getText()).toEqual('0 Tasks Active');
     });
 
   });
@@ -72,7 +72,7 @@ describe('ToDo List', function () {
       completedTasks.click();
       element(by.id('clearcompleted')).click();
       expect(element(by.id('total')).getText()).toEqual('0 Tasks Active');
-    })
+    });
 
   });
 

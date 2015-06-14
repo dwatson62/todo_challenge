@@ -1,13 +1,17 @@
-script:
-  - npm test --single-run
-  - node_modules/.bin/protractor e2e/conf.js --browser=firefox
 language: node_js
 node_js:
   - "0.10"
-before_script:
+install:
+  - npm install
   - bower install
+before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - npm start > /dev/null &
   - webdriver-manager update
   - sleep 3
+  - webdriver-manager start
+  - http-server
+script:
+  - npm test --single-run
+  - node_modules/.bin/protractor e2e/conf.js --browser=firefox

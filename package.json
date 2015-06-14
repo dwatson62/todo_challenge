@@ -4,7 +4,8 @@
   "description": "ToDo Challange =======================",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start test/karma.conf.js",
+    "test": "protractor test/e2e/conf.js"
   },
   "repository": {
     "type": "git",
