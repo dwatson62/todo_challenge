@@ -34,25 +34,27 @@ todoList.controller('ToDoListController', [ function() {
 
   self.completeTask = function() {
     task = Object.keys(self.markComplete);
-    task = task.pop();
-    for (x = 0; x < self.list.length; x ++ ) {
-      item = self.list[x];
-      if (item.task == task) {
-        item.status = 'Completed';
+    task.forEach( function (task) {
+      for (x = 0; x < self.list.length; x ++ ) {
+        item = self.list[x];
+        if (item.task == task) {
+          item.status = 'Completed';
+        }
       }
-    }
+    })
     self.updateTotal();
   };
 
   self.deleteTask = function() {
     task = Object.keys(self.markComplete);
-    task = task.pop();
-    for (x = 0; x < self.list.length; x ++ ) {
-      item = self.list[x];
-      if (item.task == task) {
-        self.list.splice(x, 1);
+    task.forEach( function (task) {
+      for (x = 0; x < self.list.length; x ++ ) {
+        item = self.list[x];
+        if (item.task == task) {
+          self.list.splice(x, 1);
+        }
       }
-    }
+    })
     self.updateTotal();
   };
 
@@ -61,6 +63,7 @@ todoList.controller('ToDoListController', [ function() {
       item = self.list[x];
       if (item.status == 'Completed') {
         self.list.splice(x, 1);
+        self.clearCompleted();
       }
     }
     self.updateTotal();
