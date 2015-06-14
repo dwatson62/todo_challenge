@@ -9,10 +9,8 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - npm start > /dev/null &
-  - webdriver-manager update
+  - npm run update-webdriver
   - sleep 3
 script:
-  - npm test --single-run
-  - webdriver-manager start
-  - http-server
-  - npm start
+  - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  - node_modules/.bin/protractor e2e-tests/protractor.conf.js --browser=firefox
