@@ -13,6 +13,3 @@ before_script:
   - sleep 3
 script:
   - npm test --single-run
-  - webdriver-manager start
-  - http-server
-  - npm start
