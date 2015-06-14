@@ -5,23 +5,31 @@ todoList.controller('ToDoListController', [ function() {
   var self = this;
   self.list = [];
   self.tasks = false;
+  self.taskNumber = 0;
 
   self.defaultMessage = function () {
-
     if (self.list.length === 0) {
       self.tasks = false;
     } else {
       self.tasks = true;
     }
+  };
 
+  self.updateTotal = function() {
+    self.taskNumber = 0;
+    for (x = 0; x < self.list.length; x ++ ) {
+      item = self.list[x];
+      if (item.status == 'pending') {
+        self.taskNumber ++;
+      }
+    }
   };
 
   self.addTask = function() {
     self.list.push( { 'task': self.newTask, 'status': 'pending' } );
     self.defaultMessage();
+    self.updateTotal();
   };
-
-  var hey;
 
   self.completeTask = function() {
     task = Object.keys(self.markComplete);
@@ -32,6 +40,7 @@ todoList.controller('ToDoListController', [ function() {
         item.status = 'completed';
       }
     }
+    self.updateTotal();
   };
 
   self.deleteTask = function() {
@@ -44,6 +53,7 @@ todoList.controller('ToDoListController', [ function() {
       }
     }
     self.defaultMessage();
+    self.updateTotal();
   };
 
 }]);

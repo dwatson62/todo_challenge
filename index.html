@@ -18,6 +18,9 @@
   <div id='list' ng-repeat='tasks in todo.list' ng-model='todo.item'>
     {{ tasks.task }} {{ tasks.status }} <input type='checkbox' class='checkbox' ng-model='todo.markComplete[tasks.task]'>
   </div>
+  <div id='total' ng-model='todo.taskNumber'>
+    {{ todo.taskNumber }} Tasks Active
+  </div>
   <div>
     Add a task here:
     <input type='text' ng-model='todo.newTask'>

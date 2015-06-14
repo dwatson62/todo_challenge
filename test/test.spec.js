@@ -39,6 +39,10 @@ describe('ToDo List', function () {
       expect(ctrl.tasks).toBe(true);
     });
 
+    it('and the total number of pending tasks are updated', function () {
+      expect(ctrl.taskNumber).toEqual(1);
+    });
+
     it('and later mark as completed', function () {
       // not passing
       ctrl.completeTask();

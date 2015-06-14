@@ -26,10 +26,20 @@ describe('ToDo List', function () {
       expect(element(by.id('list')).getText()).toContain('Get Milk pending');
     });
 
+    it('the total number of tasks is displayed', function () {
+      expect(element(by.id('total')).getText()).toEqual('1 Tasks Active')
+    });
+
     it('it can be marked off as completed', function () {
       element(by.className('checkbox')).click();
       element(by.id('completetask')).click();
       expect(element(by.id('list')).getText()).toContain('Get Milk completed');
+    });
+
+    it('after completing a task, the total active tasks are updated', function () {
+      element(by.className('checkbox')).click();
+      element(by.id('completetask')).click();
+      expect(element(by.id('total')).getText()).toEqual('0 Tasks Active')
     });
 
     it('can be deleted', function () {
