@@ -11,8 +11,8 @@ before_script:
   - npm start > /dev/null &
   - webdriver-manager update
   - sleep 3
-  - webdriver-manager start
-  - http-server
 script:
   - npm test --single-run
+  - webdriver-manager start
+  - http-server
   - npm start
