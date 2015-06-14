@@ -11,7 +11,7 @@ todoList.controller('ToDoListController', [ function() {
     self.taskNumber = 0;
     for (x = 0; x < self.list.length; x ++ ) {
       item = self.list[x];
-      if (item.status == 'active') {
+      if (item.status == 'Active') {
         self.taskNumber ++;
       }
     }
@@ -28,7 +28,7 @@ todoList.controller('ToDoListController', [ function() {
 
   self.addTask = function() {
     self.checkTask();
-    self.list.push( { 'task': self.newTask, 'status': 'active' } );
+    self.list.push( { 'task': self.newTask, 'status': 'Active' } );
     self.updateTotal();
   };
 
@@ -38,7 +38,7 @@ todoList.controller('ToDoListController', [ function() {
     for (x = 0; x < self.list.length; x ++ ) {
       item = self.list[x];
       if (item.task == task) {
-        item.status = 'completed';
+        item.status = 'Completed';
       }
     }
     self.updateTotal();
@@ -59,7 +59,7 @@ todoList.controller('ToDoListController', [ function() {
   self.clearCompleted = function() {
     for (x = 0; x < self.list.length; x ++ ) {
       item = self.list[x];
-      if (item.status == 'completed') {
+      if (item.status == 'Completed') {
         self.list.splice(x, 1);
       }
     }

@@ -24,7 +24,7 @@ describe('ToDo List', function () {
     });
 
     it('it appears as active', function () {
-      expect(element(by.id('list')).getText()).toContain('Get Milk active');
+      expect(element(by.id('list')).getText()).toContain('Get Milk Active');
     });
 
     it('the total number of tasks is displayed', function () {
@@ -43,7 +43,7 @@ describe('ToDo List', function () {
     it('and the list be updated', function () {
       checkBox.click();
       completedTasks.click();
-      expect(element(by.id('list')).getText()).toContain('Get Milk completed');
+      expect(element(by.id('list')).getText()).toContain('Get Milk Completed');
     });
 
     it('and the total active tasks are updated', function () {

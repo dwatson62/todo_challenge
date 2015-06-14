@@ -8,10 +8,10 @@ describe('ToDo List', function () {
   beforeEach(inject(function($controller) {
     ctrl = $controller('ToDoListController')
     testTasks = [{
-        'task': 'Get Milk', 'status': 'active'
+        'task': 'Get Milk', 'status': 'Active'
       }]
     completedTasks = [{
-        'task': 'Get Milk', 'status': 'completed'
+        'task': 'Get Milk', 'status': 'Completed'
       }]
   }));
 
