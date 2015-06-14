@@ -28,4 +28,4 @@ To install:
 ## Still to complete/refactor
 
 - [ ] Add filters for the todo list
-- [ ] Setup travis.yml correctly. So far it runs the karma tests but not protractor
+- [ ] Setup travis.yml correctly. So far it can only run the karma tests
