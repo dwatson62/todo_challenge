@@ -12,10 +12,11 @@
 </head>
 <center><body ng-controller='ToDoListController as todo'>
   To Do
+  <div id='no-tasks' ng-hide='todo.tasks'>
+    No tasks yet
+  </div>
   <div id='list' ng-repeat='tasks in todo.list' ng-model='todo.item'>
-    <li >
-      {{ tasks.task }} : {{ tasks.status }} <input type='checkbox' class='checkbox' ng-model='todo.markComplete[tasks.task]'>
-    </li>
+    {{ tasks.task }} {{ tasks.status }} <input type='checkbox' class='checkbox' ng-model='todo.markComplete[tasks.task]'>
   </div>
   <div>
     Add a task here:

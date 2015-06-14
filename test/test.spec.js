@@ -15,23 +15,36 @@ describe('ToDo List', function () {
       }]
   }));
 
-  it('starts with no tasks', function() {
-    expect(ctrl.list.length).toEqual(0);
+  describe('starts with no tasks', function () {
+    it('so it has an empty list', function() {
+      expect(ctrl.list.length).toEqual(0);
+    });
+
+    it('and a default message can be displayed', function() {
+      expect(ctrl.tasks).toBe(false);
+    });
   });
 
-  it('can add a task', function () {
-    ctrl.newTask = 'Get Milk';
-    ctrl.addTask();
-    console.log(ctrl.list)
-    expect(ctrl.list).toEqual(testTasks);
-  });
+  describe('can add a task', function () {
+    beforeEach(function() {
+      ctrl.newTask = 'Get Milk';
+      ctrl.addTask();
+    });
 
-  it('can mark a test as completed', function () {
-    // not passing
-    ctrl.newTask = 'Get Milk';
-    ctrl.addTask();
-    ctrl.completeTask();
-    expect(ctrl.list).toEqual(completedTasks);
+    it('and be added to the list as pending', function () {
+      expect(ctrl.list).toEqual(testTasks);
+    });
+
+    it('and the default message disappears', function () {
+      expect(ctrl.tasks).toBe(true);
+    });
+
+    it('and later mark as completed', function () {
+      // not passing
+      ctrl.completeTask();
+      expect(ctrl.list).toEqual(completedTasks);
+    });
+
   });
 
 });

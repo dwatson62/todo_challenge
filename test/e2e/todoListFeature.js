@@ -7,25 +7,37 @@ describe('ToDo List', function () {
     expect(browser.getTitle()).toEqual('ToDo List')
   });
 
-  it('can type in a new task and see it appear as pending', function () {
-    element(by.model('todo.newTask')).sendKeys('Get Milk');
-    element(by.id('addtask')).click();
-    expect(element(by.id('list')).getText()).toContain('Get Milk : pending');
+  it("displays 'No tasks yet' when empty", function () {
+    expect(element(by.id('no-tasks')).getText()).toEqual('No tasks yet');
   });
 
-  it('can mark a task as completed', function () {
-    element(by.model('todo.newTask')).sendKeys('Get Milk');
-    element(by.id('addtask')).click();
-    element(by.className('checkbox')).click();
-    element(by.id('completetask')).click();
-    expect(element(by.id('list')).getText()).toContain('Get Milk : completed');
+  describe('When a task is added', function () {
+
+    beforeEach(function () {
+      element(by.model('todo.newTask')).sendKeys('Get Milk');
+      element(by.id('addtask')).click();
+    });
+
+    it('the default display message disappears', function () {
+      expect(element(by.id('no-tasks')).isDisplayed()).toBe(false);
+    });
+
+    it('it appears as pending', function () {
+      expect(element(by.id('list')).getText()).toContain('Get Milk pending');
+    });
+
+    it('it can be marked off as completed', function () {
+      element(by.className('checkbox')).click();
+      element(by.id('completetask')).click();
+      expect(element(by.id('list')).getText()).toContain('Get Milk completed');
+    });
+
+    it('can be deleted', function () {
+      element(by.className('checkbox')).click();
+      element(by.id('deletetask')).click();
+      expect(element(by.id('no-tasks')).getText()).toEqual('No tasks yet');
+    });
+
   });
 
-  it('can delete a task', function () {
-    element(by.model('todo.newTask')).sendKeys('Get Milk');
-    element(by.id('addtask')).click();
-    element(by.className('checkbox')).click();
-    element(by.id('deletetask')).click();
-
-  });
 });
