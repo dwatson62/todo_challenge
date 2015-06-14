@@ -12,9 +12,6 @@
 </head>
 <center><body ng-controller='ToDoListController as todo'>
   To Do
-  <div id='no-tasks' ng-hide='todo.tasks'>
-    No tasks yet
-  </div>
   <div id='list' ng-repeat='tasks in todo.list' ng-model='todo.item'>
     {{ tasks.task }} {{ tasks.status }} <input type='checkbox' class='checkbox' ng-model='todo.markComplete[tasks.task]'>
   </div>
@@ -24,10 +21,10 @@
   <div>
     Add a task here:
     <input type='text' ng-model='todo.newTask'>
-    <button id='addtask' type='submit' ng-click='todo.addTask();'>Add</button>
+    <button id='addtask' type='submit' ng-click='todo.addTask(); todo.newTask = null;'>Add</button>
     <button id='completetask' type='submit' ng-click='todo.completeTask();'>Complete</button>
     <button id='deletetask' type='submit' ng-click='todo.deleteTask();'>Delete</button>
-
+    <button id='clearcompleted' type='submit' ng-click='todo.clearCompleted();'>Clear Completed</button>
   </div>
 </body></center>
 </html>

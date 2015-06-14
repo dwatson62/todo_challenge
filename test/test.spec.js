@@ -8,7 +8,7 @@ describe('ToDo List', function () {
   beforeEach(inject(function($controller) {
     ctrl = $controller('ToDoListController')
     testTasks = [{
-        'task': 'Get Milk', 'status': 'pending'
+        'task': 'Get Milk', 'status': 'active'
       }]
     completedTasks = [{
         'task': 'Get Milk', 'status': 'completed'
@@ -17,11 +17,7 @@ describe('ToDo List', function () {
 
   describe('starts with no tasks', function () {
     it('so it has an empty list', function() {
-      expect(ctrl.list.length).toEqual(0);
-    });
-
-    it('and a default message can be displayed', function() {
-      expect(ctrl.tasks).toBe(false);
+      expect(ctrl.taskNumber).toEqual(0);
     });
   });
 
@@ -31,15 +27,11 @@ describe('ToDo List', function () {
       ctrl.addTask();
     });
 
-    it('and be added to the list as pending', function () {
+    it('and be added to the list as active', function () {
       expect(ctrl.list).toEqual(testTasks);
     });
 
-    it('and the default message disappears', function () {
-      expect(ctrl.tasks).toBe(true);
-    });
-
-    it('and total number of pending tasks are updated', function () {
+    it('and total number of active tasks are updated', function () {
       expect(ctrl.taskNumber).toEqual(1);
     });
 
