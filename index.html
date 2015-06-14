@@ -35,7 +35,7 @@
         </thead>
         <tbody ng-repeat='tasks in todo.list' ng-model='todo.item'>
           <tr>
-            <td><input type='checkbox' class='checkbox' ng-model='todo.markComplete[tasks.task]'></td>
+            <td><input type='checkbox' class='checkbox' ng-model='todo.markedTasks[tasks.task]'></td>
             <td>{{ tasks.task }}</td>
             <td><i> {{ tasks.status }} </i></td>
           </tr>

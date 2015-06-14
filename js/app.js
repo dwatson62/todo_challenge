@@ -6,7 +6,6 @@ todoList.controller('ToDoListController', [ function() {
   self.list = [];
   self.tasks = false;
   self.taskNumber = 0;
-  // self.markComplete = [];
 
   self.updateTotal = function() {
     self.taskNumber = 0;
@@ -34,7 +33,7 @@ todoList.controller('ToDoListController', [ function() {
   };
 
   self.completeTask = function() {
-    Object.keys(self.markComplete).forEach( function (key) {
+    Object.keys(self.markedTasks).forEach( function (key) {
       for (x = 0; x < self.list.length; x ++ ) {
         item = self.list[x];
         if (item.task == key) {
@@ -46,7 +45,7 @@ todoList.controller('ToDoListController', [ function() {
   };
 
   self.deleteTask = function() {
-    Object.keys(self.markComplete).forEach( function (key) {
+    Object.keys(self.markedTasks).forEach( function (key) {
       for (x = 0; x < self.list.length; x ++ ) {
         item = self.list[x];
         if (item.task == key) {
