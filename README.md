@@ -1,7 +1,11 @@
 ToDo Challange
 =======================
 
+[![Code Climate](https://codeclimate.com/github/dwatson62/todo_challenge/badges/gpa.svg)](https://codeclimate.com/github/dwatson62/todo_challenge)
+
 ## Synopsis
+
+Original repo:(https://github.com/makersacademy/todo_challenge)
 
 My submission for the ToDo Challenge. User can add tasks, or select individual and multiple tasks for deleting or marking as completing. Can also delete all tasks marked as completed.
 
