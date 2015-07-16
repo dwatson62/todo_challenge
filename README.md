@@ -11,13 +11,22 @@ My submission for the ToDo Challenge. User can add tasks, or select individual a
 
 Was not able to work out how to create the filters, or how to fully setup travis to run the protractor tests. Currently it only runs karma.
 
-To install:
+## To install:
 
 - Clone down to your machine
 - In the local directory run: npm install, npm install bower, bower install
 - Run: node server.js
-- To run karma tests: karma start test/karma.conf.js
-- To run protractor tests: protractor test/e2e/conf.js
+
+# Karma Tests
+
+- karma start test/karma.conf.js
+
+# Protractor Tests:
+
+- node server.js
+- webdriver-manager update
+- webdriver-manager start
+- protractor test/e2e/conf.js
 
 ## Technologies Used
 
