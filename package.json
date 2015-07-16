@@ -12,7 +12,7 @@
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor ./test/e2e/protractor.conf.js"
+    "protractor": "protractor ./test/e2e/conf.js"
   },
   "dependencies": {
     "body-parser": "~1.12.4",
