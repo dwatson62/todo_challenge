@@ -1,7 +1,7 @@
 ToDo Challange
 =======================
 
-[![Code Climate](https://codeclimate.com/github/dwatson62/todo_challenge/badges/gpa.svg)](https://codeclimate.com/github/dwatson62/todo_challenge)
+[![Code Climate](https://codeclimate.com/github/dwatson62/todo_challenge/badges/gpa.svg)](https://codeclimate.com/github/dwatson62/todo_challenge) [![Build Status](https://travis-ci.org/dwatson62/todo_challenge.svg?branch=master)](https://travis-ci.org/dwatson62/todo_challenge)
 
 ## Synopsis
 
