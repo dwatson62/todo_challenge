@@ -15,9 +15,9 @@ To install:
 
 - Clone down to your machine
 - In the local directory run: npm install, npm install bower, bower install
-- To execute file run: open index.html
+- Run: node server.js
 - To run karma tests: karma start test/karma.conf.js
-- To run protractor tests: protractor test/e2e.conf.js
+- To run protractor tests: protractor test/e2e/conf.js
 
 ## Technologies Used
 

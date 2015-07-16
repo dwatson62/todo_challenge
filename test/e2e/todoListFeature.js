@@ -7,7 +7,7 @@ describe('ToDo List', function () {
   var clearCompleted = element(by.id('clearcompleted'));
 
   beforeEach(function () {
-    browser.get('http://localhost:8080');
+    browser.get('http://localhost:3000');
   });
 
   it('has a title', function () {
